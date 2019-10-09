@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new Department</title>
+</head>
+<body>
+<h1>Create department</h1>
+<p>
+    <a th:href="@{/department/list}">Province list</a>
+</p>
+<form th:action="@{/department/create}" th:object="${department}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create department"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
