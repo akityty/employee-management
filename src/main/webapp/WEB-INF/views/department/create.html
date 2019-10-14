@@ -2,22 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Create new Department</title>
+    <title th:text="#{de.create.title}"></title>
 </head>
 <body>
-<h1>Create department</h1>
+<h1 th:text="#{de.create.h1Tag}"></h1>
 <p>
-    <a th:href="@{/department/list}">Province list</a>
+    <a th:href="@{/department/list}" th:text="#{de.create.aTag}"></a>
 </p>
 <form th:action="@{/department/create}" th:object="${department}" method="post">
     <table>
         <tr>
-            <td>Name:</td>
+            <td th:text="#{de.create.nameTd}"></td>
             <td><input type="text" th:field="*{name}"/></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="Create department"></td>
+            <td><input type="submit" th:value="#{de.create.submitBtn}"></td>
         </tr>
     </table>
 </form>

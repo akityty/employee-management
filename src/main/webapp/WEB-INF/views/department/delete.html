@@ -2,23 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>delete Department</title>
+    <title th:text="#{de.delete.title}"></title>
 </head>
 <body>
-<h1>delete Department</h1>department
+<h1 th:text="#{de.delete.h1Tag}"></h1>
 <p>
-    <a th:href="@{/department/list}">department list</a>
+    <a th:href="@{/department/list}" th:text="#{de.list.deletelink}"></a>
 </p>
 <form th:action="@{/department/delete}" th:object="${department}" method="post">
     <input th:type="hidden" name="id" th:field="*{id}">
     <table>
         <tr>
-            <td>Name:</td>
+            <td th:text="#{de.delete.nameTd}"></td>
             <td><input type="text" th:field="*{name}"/></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="delete Department"></td>
+            <td><input type="submit" th:value="#{de.delete.submitBtn}"></td>
         </tr>
     </table>
 </form>
